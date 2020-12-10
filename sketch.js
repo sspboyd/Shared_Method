@@ -7,8 +7,8 @@ const canvasH = 322;
 // it isn't in a p5 object?? 
 // How to set this up so we can share a method 
 // across more than one sketch/canvas??
-const draw_rect = function () {
-  rect(100, 100, 10, 10); // no context for the rect() method here
+const draw_rect = function (p55) {
+  // rect(100, 100, 10, 10); // no context for the rect() method here
   p55.rect(100, 100, 10, 10); // no context for p55 here unlike in the code below.
 };
 
@@ -24,7 +24,7 @@ const sketch1 = (p55) => {
     p55.fill(47, 123);
     p55.noStroke();
     p55.rect(p55.mouseX, p55.mouseY, 47, 47);
-    draw_rect(); // breaks
+    draw_rect(p55); // working!
   };
 };
 
@@ -43,7 +43,7 @@ const sketch2 = (p55) => {
     p55.fill(255, 199);
     p55.noStroke();
     p55.ellipse(p55.mouseX, p55.mouseY, 47, 47);
-    draw_rect(); // breaks
+    draw_rect(p55); // working now!
   };
 };
 
